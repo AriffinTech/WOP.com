@@ -53,9 +53,9 @@ export default function BouquetCard({ bouquet }: { bouquet: Bouquet }) {
 
         {/* Info */}
         <div className="flex flex-col text-center">
-          <h3 className="font-heading text-lg font-medium text-charcoal mb-1">{bouquet.name}</h3>
-          <p className="text-sm font-semibold text-charcoal mb-1">From RM {bouquet.price}</p>
-          <p className="text-[13px] text-text-light">{bouquet.colorLabel}</p>
+          <h3 className="font-heading text-base md:text-lg font-medium text-charcoal mb-0.5 md:mb-1 leading-tight">{bouquet.name}</h3>
+          <p className="text-xs md:text-sm font-semibold text-charcoal mb-0.5 md:mb-1">From RM {bouquet.price}</p>
+          <p className="text-[11px] md:text-[13px] text-text-light">{bouquet.colorLabel}</p>
         </div>
       </Link>
     </div>

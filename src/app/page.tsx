@@ -123,9 +123,9 @@ export default async function HomePage() {
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="font-heading text-3xl md:text-5xl font-bold text-charcoal mb-12">Bestsellers</h2>
             
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-12">
+            <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-12">
               {bestsellers.map((b) => (
-                <div key={b.id} className="w-[calc(50%-0.5rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] max-w-[300px]">
+                <div key={b.id} className="w-[calc(50%-0.375rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] max-w-[300px]">
                   <BouquetCard bouquet={b} />
                 </div>
               ))}
