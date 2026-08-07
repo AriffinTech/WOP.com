@@ -1,8 +1,9 @@
+import Papa from "papaparse";
+
 /**
  * BOUQUET CATALOGUE DATA
  * =====================
  * Single source of truth for all bouquet listings.
- * To add/remove/update bouquets, edit this file.
  */
 
 export interface BouquetSize {
@@ -30,295 +31,233 @@ export interface Bouquet {
   dateAdded: string;
 }
 
-export const bouquets: Bouquet[] = [
-  {
-    id: "peony-blush",
-    name: "Peony Blush",
-    price: 189,
-    sizes: [
-      { name: "Standard", price: 189 },
-      { name: "Premium", price: 259 },
-    ],
-    category: "romance",
-    occasion: ["anniversary", "birthday", "just-because"],
-    flowerTypes: ["Peonies", "Garden Roses", "Eucalyptus"],
-    colors: ["pink", "white"],
-    colorLabel: "Soft Pink & White",
-    style: "classic",
-    description:
-      "A dreamy arrangement of blush peonies and ivory garden roses, finished with delicate eucalyptus greenery. Perfect for romantic occasions or to brighten someone's day.",
-    careInstructions:
-      "Trim stems at an angle and change water every 2 days. Keep away from direct sunlight. Expected vase life: 5–7 days.",
-    availability: "available",
-    tags: ["best-seller", "popular"],
-    images: ["/images/bouquets/peony-blush.jpg"],
-    customisable: true,
-    dateAdded: "2026-01-15",
-  },
-  {
-    id: "sunset-garden",
-    name: "Sunset Garden",
-    price: 159,
-    sizes: [
-      { name: "Standard", price: 159 },
-      { name: "Premium", price: 219 },
-      { name: "Grand", price: 299 },
-    ],
-    category: "vibrant",
-    occasion: ["birthday", "congratulations", "just-because"],
-    flowerTypes: ["Roses", "Gerbera Daisies", "Carnations", "Hypericum Berries"],
-    colors: ["orange", "yellow", "red"],
-    colorLabel: "Warm Sunset Tones",
-    style: "rustic",
-    description:
-      "A vibrant burst of warmth featuring sunset-hued roses, cheerful gerberas, and pops of hypericum berries. An uplifting arrangement that brings joy to any room.",
-    careInstructions:
-      "Trim stems at an angle and change water every 2 days. Add flower food if provided. Expected vase life: 7–10 days.",
-    availability: "available",
-    tags: ["popular"],
-    images: ["/images/bouquets/sunset-garden.jpg"],
-    customisable: true,
-    dateAdded: "2026-02-10",
-  },
-  {
-    id: "white-serenity",
-    name: "White Serenity",
-    price: 219,
-    sizes: [
-      { name: "Standard", price: 219 },
-      { name: "Premium", price: 299 },
-    ],
-    category: "elegant",
-    occasion: ["sympathy", "wedding", "anniversary"],
-    flowerTypes: ["White Roses", "Lilies", "Baby's Breath", "Dusty Miller"],
-    colors: ["white", "green"],
-    colorLabel: "Pure White & Green",
-    style: "classic",
-    description:
-      "An ethereal all-white arrangement of pristine roses and fragrant lilies, softened by clouds of baby's breath. Conveys peace, elegance, and heartfelt emotion.",
-    careInstructions:
-      "Remove lily pollen to avoid staining. Trim stems and change water every 2 days. Expected vase life: 7–10 days.",
-    availability: "available",
-    tags: ["featured"],
-    images: ["/images/bouquets/white-serenity.jpg"],
-    customisable: false,
-    dateAdded: "2026-03-01",
-  },
-  {
-    id: "lavender-dream",
-    name: "Lavender Dream",
-    price: 139,
-    sizes: [
-      { name: "Standard", price: 139 },
-      { name: "Premium", price: 199 },
-    ],
-    category: "pastel",
-    occasion: ["birthday", "just-because", "graduation"],
-    flowerTypes: ["Lavender Roses", "Lisianthus", "Statice"],
-    colors: ["purple", "lavender"],
-    colorLabel: "Soft Lavender",
-    style: "romantic",
-    description:
-      "Delicate shades of purple and lilac come together in this romantic arrangement. Featuring lavender roses and ruffled lisianthus for an irresistibly feminine touch.",
-    careInstructions:
-      "Trim stems at an angle. Keep in a cool spot away from fruits. Expected vase life: 5–7 days.",
-    availability: "available",
-    tags: ["new"],
-    images: ["/images/bouquets/lavender-dream.jpg"],
-    customisable: true,
-    dateAdded: "2026-06-20",
-  },
-  {
-    id: "rustic-wildflower",
-    name: "Rustic Wildflower",
-    price: 129,
-    sizes: [
-      { name: "Standard", price: 129 },
-      { name: "Premium", price: 179 },
-    ],
-    category: "rustic",
-    occasion: ["birthday", "just-because", "housewarming"],
-    flowerTypes: ["Chamomile", "Sunflowers", "Dried Wheat", "Daisies"],
-    colors: ["yellow", "white", "green"],
-    colorLabel: "Natural Meadow",
-    style: "rustic",
-    description:
-      "Inspired by sun-drenched meadows, this cheerful mix of chamomile, mini sunflowers, and dried wheat brings a breath of fresh air and countryside charm.",
-    careInstructions:
-      "Trim stems and refresh water daily. Dried elements will last much longer. Expected vase life: 5–7 days for fresh stems.",
-    availability: "available",
-    tags: ["popular"],
-    images: ["/images/bouquets/rustic-wildflower.jpg"],
-    customisable: true,
-    dateAdded: "2026-04-05",
-  },
-  {
-    id: "crimson-love",
-    name: "Crimson Love",
-    price: 199,
-    sizes: [
-      { name: "Standard", price: 199 },
-      { name: "Premium", price: 279 },
-      { name: "Grand", price: 369 },
-    ],
-    category: "romance",
-    occasion: ["anniversary", "valentines", "romance"],
-    flowerTypes: ["Red Roses", "Red Spray Roses", "Eucalyptus"],
-    colors: ["red"],
-    colorLabel: "Classic Red",
-    style: "classic",
-    description:
-      "The timeless declaration of love. Premium long-stemmed red roses beautifully wrapped with hints of eucalyptus. Nothing says 'I love you' quite like this.",
-    careInstructions:
-      "Trim stems at an angle and place in clean water. Change water every 2 days. Expected vase life: 7–10 days.",
-    availability: "available",
-    tags: ["best-seller", "featured"],
-    images: ["/images/bouquets/crimson-love.jpg"],
-    customisable: true,
-    dateAdded: "2026-01-01",
-  },
-  {
-    id: "spring-meadow",
-    name: "Spring Meadow",
-    price: 149,
-    sizes: [
-      { name: "Standard", price: 149 },
-      { name: "Premium", price: 209 },
-    ],
-    category: "vibrant",
-    occasion: ["birthday", "congratulations", "housewarming", "just-because"],
-    flowerTypes: ["Tulips", "Ranunculus", "Sweet Peas", "Greenery"],
-    colors: ["pink", "yellow", "green"],
-    colorLabel: "Cheerful Spring Mix",
-    style: "garden",
-    description:
-      "A lively celebration of spring blooms! Tulips, ranunculus, and sweet peas mingle in a joyful palette that captures the energy of a sunlit garden.",
-    careInstructions:
-      "Tulips continue to grow in the vase — this is normal! Refresh water daily. Expected vase life: 5–7 days.",
-    availability: "available",
-    tags: ["new"],
-    images: ["/images/bouquets/spring-meadow.jpg"],
-    customisable: true,
-    dateAdded: "2026-07-01",
-  },
-  {
-    id: "blush-elegance",
-    name: "Blush Elegance",
-    price: 249,
-    sizes: [
-      { name: "Premium", price: 249 },
-      { name: "Grand", price: 349 },
-    ],
-    category: "elegant",
-    occasion: ["wedding", "anniversary", "birthday"],
-    flowerTypes: ["Roses", "Peonies", "Hydrangea", "Ranunculus"],
-    colors: ["pink", "blush", "cream"],
-    colorLabel: "Blush & Cream",
-    style: "romantic",
-    description:
-      "Our most luxurious arrangement — a lush cascade of blush roses, peonies, and hydrangea in the softest palette. Designed for moments that deserve something truly extraordinary.",
-    careInstructions:
-      "Mist hydrangea petals lightly. Trim stems and change water every 2 days. Expected vase life: 5–7 days.",
-    availability: "available",
-    tags: ["featured", "best-seller"],
-    images: ["/images/bouquets/blush-elegance.jpg"],
-    customisable: false,
-    dateAdded: "2026-05-12",
-  },
-  {
-    id: "tropical-paradise",
-    name: "Tropical Paradise",
-    price: 179,
-    sizes: [
-      { name: "Standard", price: 179 },
-      { name: "Premium", price: 249 },
-    ],
-    category: "vibrant",
-    occasion: ["birthday", "congratulations", "housewarming"],
-    flowerTypes: ["Bird of Paradise", "Orchids", "Anthurium", "Tropical Leaves"],
-    colors: ["orange", "purple", "green"],
-    colorLabel: "Tropical Brights",
-    style: "modern",
-    description:
-      "Bold, exotic, and unforgettable. This striking tropical arrangement features bird of paradise, vibrant orchids, and lush tropical foliage for a statement that turns heads.",
-    careInstructions:
-      "Tropical flowers love warmth. Keep in a warm room and mist occasionally. Expected vase life: 10–14 days.",
-    availability: "available",
-    tags: [],
-    images: ["/images/bouquets/tropical-paradise.jpg"],
-    customisable: true,
-    dateAdded: "2026-04-20",
-  },
-  {
-    id: "pastel-petite",
-    name: "Pastel Petite",
-    price: 89,
-    sizes: [{ name: "Petite", price: 89 }],
-    category: "pastel",
-    occasion: ["just-because", "birthday", "thank-you"],
-    flowerTypes: ["Mini Roses", "Carnations", "Wax Flower"],
-    colors: ["pink", "lavender", "white"],
-    colorLabel: "Soft Pastels",
-    style: "classic",
-    description:
-      "A sweet, petite posy perfect for small gestures that mean a lot. Mini roses and delicate wax flower in a pretty pastel palette.",
-    careInstructions:
-      "Trim stems and place in fresh water. Change water every 2 days. Expected vase life: 5–7 days.",
-    availability: "available",
-    tags: ["popular"],
-    images: ["/images/bouquets/pastel-petite.jpg"],
-    customisable: false,
-    dateAdded: "2026-03-15",
-  },
-  {
-    id: "golden-hour",
-    name: "Golden Hour",
-    price: 169,
-    sizes: [
-      { name: "Standard", price: 169 },
-      { name: "Premium", price: 239 },
-    ],
-    category: "vibrant",
-    occasion: ["birthday", "congratulations", "graduation"],
-    flowerTypes: ["Sunflowers", "Yellow Roses", "Solidago", "Craspedia"],
-    colors: ["yellow", "gold"],
-    colorLabel: "Sunny Gold",
-    style: "rustic",
-    description:
-      "Capture the magic of golden hour with this radiant arrangement of sunflowers and golden roses. A guaranteed mood-lifter that brings sunshine indoors.",
-    careInstructions:
-      "Sunflowers are thirsty! Check water levels daily. Trim stems every 2 days. Expected vase life: 7–10 days.",
-    availability: "available",
-    tags: ["new"],
-    images: ["/images/bouquets/golden-hour.jpg"],
-    customisable: true,
-    dateAdded: "2026-07-15",
-  },
-  {
-    id: "midnight-bloom",
-    name: "Midnight Bloom",
-    price: 209,
-    sizes: [
-      { name: "Standard", price: 209 },
-      { name: "Premium", price: 289 },
-    ],
-    category: "elegant",
-    occasion: ["anniversary", "birthday", "romance"],
-    flowerTypes: ["Deep Purple Roses", "Anemones", "Black Scabiosa", "Thistle"],
-    colors: ["purple", "burgundy", "black"],
-    colorLabel: "Dark & Moody",
-    style: "modern",
-    description:
-      "For those who love the dramatic and the unusual. Deep purple roses, dark scabiosa, and textural thistle create a hauntingly beautiful, mood-rich arrangement.",
-    careInstructions:
-      "Trim stems at an angle. Keep in a cool place. Change water every 2 days. Expected vase life: 5–7 days.",
-    availability: "seasonal",
-    tags: ["featured"],
-    images: ["/images/bouquets/midnight-bloom.jpg"],
-    customisable: false,
-    dateAdded: "2026-06-01",
-  },
-];
+const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSTQUjxKmRbZLy8MRoT0sC55Rbwk5PTccjvdn5_qwH4dhXSta-SSGfJ8eWruSzUW6aCOqrmA0NmXKz3/pub?output=csv";
+
+const USE_GOOGLE_SHEETS = false; // Set to true when you want to use the live Google Sheet
+
+export async function getBouquets(): Promise<Bouquet[]> {
+  if (!USE_GOOGLE_SHEETS) {
+    return [
+      {
+        id: "oriental-lilies-bloom",
+        name: "Oriental Lilies Bloom",
+        price: 259,
+        sizes: [{ name: "Standard", price: 259 }],
+        category: "elegant",
+        occasion: ["anniversary", "birthday", "just-because"],
+        flowerTypes: ["Lilies", "Mix Blooms"],
+        colors: ["white", "pink"],
+        colorLabel: "Soft Pink & White",
+        style: "classic",
+        description: "A beautiful arrangement of fresh Oriental Lilies and mix blooms. Perfect for elegant occasions.",
+        careInstructions: "Trim stems at an angle and change water every 2 days.",
+        availability: "available",
+        tags: ["popular", "featured"],
+        images: ["/images/real/photo_5_2026-08-06_12-12-47.jpg", "/images/real/photo_6_2026-08-06_12-12-47.jpg"],
+        customisable: true,
+        dateAdded: "2026-08-01",
+      },
+      {
+        id: "thumbelily-l",
+        name: "Thumbelily (L)",
+        price: 159,
+        sizes: [{ name: "Standard", price: 159 }],
+        category: "elegant",
+        occasion: ["anniversary", "birthday"],
+        flowerTypes: ["Thumbelina", "Lilies"],
+        colors: ["pink"],
+        colorLabel: "Pink",
+        style: "classic",
+        description: "A stunning large arrangement featuring Thumbelina and Lilies, crafted with our signature touches.",
+        careInstructions: "Trim stems at an angle and change water every 2 days.",
+        availability: "available",
+        tags: ["best-seller"],
+        images: ["/images/real/photo_1_2026-08-06_12-12-47.jpg", "/images/real/photo_2_2026-08-06_12-12-47.jpg"],
+        customisable: true,
+        dateAdded: "2026-08-01",
+      },
+      {
+        id: "thumbelily-m",
+        name: "Thumbelily (M)",
+        price: 139,
+        sizes: [{ name: "Standard", price: 139 }],
+        category: "elegant",
+        occasion: ["anniversary", "birthday"],
+        flowerTypes: ["Thumbelina", "Lilies"],
+        colors: ["pink"],
+        colorLabel: "Pink",
+        style: "classic",
+        description: "A lovely medium arrangement featuring Thumbelina and Lilies, perfect for showing you care.",
+        careInstructions: "Trim stems at an angle and change water every 2 days.",
+        availability: "available",
+        tags: [],
+        images: ["/images/real/photo_3_2026-08-06_12-12-47.jpg", "/images/real/photo_4_2026-08-06_12-12-47.jpg"],
+        customisable: true,
+        dateAdded: "2026-08-01",
+      },
+      {
+        id: "thumbelina-s",
+        name: "Thumbelina (S)",
+        price: 100,
+        sizes: [{ name: "Standard", price: 100 }],
+        category: "elegant",
+        occasion: ["birthday", "just-because"],
+        flowerTypes: ["Thumbelina", "Roses", "Mix blooms"],
+        colors: ["pink", "white"],
+        colorLabel: "Soft Pink & White",
+        style: "classic",
+        description: "A sweet small arrangement with Thumbelina, Roses, and mix blooms. Handcrafted with playful details.",
+        careInstructions: "Trim stems at an angle and change water every 2 days.",
+        availability: "available",
+        tags: ["new"],
+        images: ["/images/real/photo_7_2026-08-06_12-12-47.jpg", "/images/real/photo_8_2026-08-06_12-12-47.jpg"],
+        customisable: true,
+        dateAdded: "2026-08-01",
+      },
+      {
+        id: "mix-blooms",
+        name: "Mix Blooms",
+        price: 50,
+        sizes: [{ name: "Standard", price: 50 }],
+        category: "vibrant",
+        occasion: ["just-because", "birthday"],
+        flowerTypes: ["Chrysanthemums", "Gerbera", "Fillers"],
+        colors: ["mixed"],
+        colorLabel: "Mixed Colors",
+        style: "rustic",
+        description: "A cheerful mix of Chrysanthemums, Gerbera, and seasonal fillers to bring a little moment of joy.",
+        careInstructions: "Trim stems at an angle and change water every 2 days.",
+        availability: "available",
+        tags: ["popular"],
+        images: ["/images/real/photo_13_2026-08-06_12-12-47.jpg", "/images/real/photo_14_2026-08-06_12-12-47.jpg"],
+        customisable: true,
+        dateAdded: "2026-08-01",
+      },
+      {
+        id: "lilies-bloom-l",
+        name: "Lilies Bloom (L)",
+        price: 129,
+        sizes: [{ name: "Standard", price: 129 }],
+        category: "elegant",
+        occasion: ["anniversary", "birthday"],
+        flowerTypes: ["Lilies", "Mix blooms"],
+        colors: ["white", "green"],
+        colorLabel: "White & Green",
+        style: "classic",
+        description: "A large, elegant bouquet of Lilies and mix blooms, thoughtfully arranged by hand.",
+        careInstructions: "Trim stems at an angle and change water every 2 days.",
+        availability: "available",
+        tags: ["featured"],
+        images: ["/images/real/photo_9_2026-08-06_12-12-47.jpg", "/images/real/photo_10_2026-08-06_12-12-47.jpg"],
+        customisable: true,
+        dateAdded: "2026-08-01",
+      },
+      {
+        id: "lilies-bloom-m",
+        name: "Lilies Bloom (M)",
+        price: 79,
+        sizes: [{ name: "Standard", price: 79 }],
+        category: "elegant",
+        occasion: ["anniversary", "birthday"],
+        flowerTypes: ["Lilies", "Mix blooms"],
+        colors: ["white", "green"],
+        colorLabel: "White & Green",
+        style: "classic",
+        description: "A medium, elegant bouquet of Lilies and mix blooms to make ordinary moments magical.",
+        careInstructions: "Trim stems at an angle and change water every 2 days.",
+        availability: "available",
+        tags: [],
+        images: ["/images/real/photo_11_2026-08-06_12-12-47.jpg", "/images/real/photo_12_2026-08-06_12-12-47.jpg"],
+        customisable: true,
+        dateAdded: "2026-08-01",
+      }
+    ];
+  }
+
+  try {
+    const res = await fetch(CSV_URL, {
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) throw new Error("Failed to fetch bouquets from Google Sheets");
+    let csv = await res.text();
+    
+    // Find the actual header row (some sheets have empty first rows)
+    const headerIndex = csv.toLowerCase().indexOf('bouquet name');
+    if (headerIndex !== -1) {
+      const lineStart = csv.lastIndexOf('\n', headerIndex);
+      csv = csv.substring(lineStart === -1 ? 0 : lineStart + 1);
+    }
+    
+    const { data } = Papa.parse(csv, { header: true, skipEmptyLines: true });
+    
+    // Some sheets have a blank first column, so data might be keyed weirdly. 
+    // We'll normalize keys to lowercase and strip whitespace to make it robust.
+    const normalizeKey = (key: string) => key.toLowerCase().replace(/[^a-z0-9]/g, '');
+    
+    const validData = data.filter((row: any) => {
+      const name = row['Bouquet Name'] || row.name || Object.entries(row).find(([k]) => normalizeKey(k) === 'bouquetname')?.[1];
+      return name && String(name).trim() !== "";
+    });
+    
+    return validData.map((row: any) => {
+      // Helper to extract by fuzzy key
+      const getVal = (possibleKeys: string[]) => {
+        for (const key of possibleKeys) {
+          if (row[key]) return row[key];
+          const fuzzyMatch = Object.entries(row).find(([k]) => normalizeKey(k) === normalizeKey(key));
+          if (fuzzyMatch && fuzzyMatch[1]) return fuzzyMatch[1];
+        }
+        return "";
+      };
+
+      const name = getVal(['Bouquet Name', 'name', 'title']);
+      const rawPrice = getVal(['Price ', 'price', 'cost']);
+      const price = parseInt(rawPrice.replace(/[^0-9]/g, "") || "0", 10);
+      const rawFlowers = getVal(['Flower type ', 'flowerTypes', 'flowers']);
+      const flowerTypes = rawFlowers ? rawFlowers.split(/[+,]/).map((s: string) => s.trim()).filter(Boolean) : [];
+      const imagesRaw = getVal(['images', 'image', 'photo', 'photos']);
+      const images = imagesRaw ? imagesRaw.split(",").map((s: string) => s.trim()).filter(Boolean) : ["/images/placeholder.jpg"];
+
+      return {
+        id: row.id || name.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+        name: name,
+        price: price,
+        sizes: [{ name: "Standard", price: price }],
+        category: row.category || "elegant",
+        occasion: row.occasion ? row.occasion.split(",").map((s: string) => s.trim()).filter(Boolean) : [],
+        flowerTypes: flowerTypes,
+        colors: row.colors ? row.colors.split(",").map((s: string) => s.trim()).filter(Boolean) : [],
+        colorLabel: getVal(['Colour description ', 'colorLabel', 'color']),
+        style: row.style || "classic",
+        description: getVal(['Short description ', 'description', 'desc']),
+        careInstructions: row.careInstructions || "",
+        availability: (row.availability || "available") as any,
+        tags: row.tags ? row.tags.split(",").map((s: string) => s.trim()).filter(Boolean) : [],
+        images: images,
+        customisable: row.customisable?.toLowerCase() === "true" || row.customisable === "1",
+        dateAdded: row.dateAdded || new Date().toISOString().split("T")[0],
+      };
+    });
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
+}
+
+export async function getFlowerOptions() {
+  const bouquets = await getBouquets();
+  const flowerMap = new Map<string, string>();
+  bouquets.flatMap((b) => b.flowerTypes || []).forEach((flower) => {
+    const value = flower.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    if (!flowerMap.has(value)) {
+      flowerMap.set(value, flower);
+    }
+  });
+
+  return Array.from(flowerMap.entries())
+    .sort((a, b) => a[1].localeCompare(b[1]))
+    .map(([value, label]) => ({ value, label }));
+}
 
 /* ─── Filter Options ────────────────────────── */
 
@@ -337,18 +276,18 @@ export const occasions = [
 ];
 
 export const colorOptions = [
-  { value: "pink", label: "Pink" },
-  { value: "red", label: "Red" },
-  { value: "white", label: "White" },
-  { value: "yellow", label: "Yellow" },
-  { value: "purple", label: "Purple" },
-  { value: "orange", label: "Orange" },
-  { value: "green", label: "Green" },
-  { value: "lavender", label: "Lavender" },
-  { value: "cream", label: "Cream" },
-  { value: "blush", label: "Blush" },
-  { value: "burgundy", label: "Burgundy" },
-  { value: "gold", label: "Gold" },
+  { value: "pink", label: "Pink", hex: "#ffc0cb" },
+  { value: "red", label: "Red", hex: "#ff0000" },
+  { value: "white", label: "White", hex: "#f8f9fa" },
+  { value: "yellow", label: "Yellow", hex: "#ffd700" },
+  { value: "purple", label: "Purple", hex: "#800080" },
+  { value: "orange", label: "Orange", hex: "#ffa500" },
+  { value: "green", label: "Green", hex: "#008000" },
+  { value: "lavender", label: "Lavender", hex: "#e6e6fa" },
+  { value: "cream", label: "Cream", hex: "#fffdd0" },
+  { value: "blush", label: "Blush", hex: "#de5d83" },
+  { value: "burgundy", label: "Burgundy", hex: "#800020" },
+  { value: "gold", label: "Gold", hex: "#ffd700" },
 ];
 
 export const priceRanges = [
@@ -376,8 +315,8 @@ export const sortOptions = [
 
 /* ─── WhatsApp / Instagram Helpers ──────────── */
 
-const WHATSAPP_NUMBER = "60123456789"; // ← Client's number
-const INSTAGRAM_URL = "https://instagram.com/yourbouquetbusiness"; // ← Client's IG
+const WHATSAPP_NUMBER = "60139227688";
+const INSTAGRAM_URL = "https://instagram.com/wispofpetalss";
 
 export function getWhatsAppLink(bouquetName?: string, price?: number): string {
   const message = bouquetName
