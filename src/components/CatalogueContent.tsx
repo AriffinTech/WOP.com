@@ -154,7 +154,24 @@ export default function CatalogueContent({ initialBouquets, flowerOptions }: Cat
         {/* Main Grid */}
         <main className="flex-1">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-            <h1 className="font-heading text-3xl font-medium">All Bouquets <span className="text-text-muted text-lg font-normal ml-2">({filteredBouquets.length})</span></h1>
+            <div className="flex items-center gap-4 flex-wrap">
+              <h1 className="font-heading text-3xl font-medium flex items-center">
+                {currentOccasion === "birthday" ? "Birthday" :
+                 currentOccasion === "romance" ? "Romance" :
+                 currentOccasion === "just-because" ? "Just Because" :
+                 currentOccasion === "anniversary" ? "Anniversary" :
+                 currentSort === "popular" ? "Bestsellers" : "All Bouquets"}
+                 <span className="text-text-muted text-lg font-normal ml-2">({filteredBouquets.length})</span>
+              </h1>
+              {(currentOccasion || currentSort === "popular") && (
+                <button
+                  onClick={clearFilters}
+                  className="text-[11px] uppercase tracking-wider font-semibold px-4 py-1.5 bg-charcoal text-white hover:bg-[#2a2a2a] rounded-full transition-all shadow-sm"
+                >
+                  View All
+                </button>
+              )}
+            </div>
             
             <div className="flex items-center gap-3 self-start sm:self-auto">
               <span className="text-sm text-text-muted">Sort by:</span>
