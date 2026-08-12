@@ -346,7 +346,7 @@ const INSTAGRAM_URL = "https://instagram.com/wispofpetalss";
 
 export function getWhatsAppLink(bouquetName?: string, price?: number): string {
   const message = bouquetName
-    ? `Hi! 🌸 I'm interested in the "${bouquetName}" bouquet${price ? ` (from RM ${price})` : ""}. Is it currently available?`
+    ? `Hi! 🌸 I'm interested in the "${bouquetName}" bouquet${price ? ` (RM ${price})` : ""}. Is it currently available?`
     : "Hi! 🌸 I'd like to enquire about your flower bouquets.";
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }

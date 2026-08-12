@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <div className="pt-[104px]">
       {/* Header */}
-      <section className="bg-cream-dark border-b border-border-light py-24 md:py-32">
+      <section className="bg-cream-dark border-b border-border-light py-16 md:py-32">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <span className="text-xs font-semibold tracking-wider uppercase text-sage mb-3 block">Get in Touch</span>
           <h1 className="font-heading text-4xl md:text-6xl font-medium text-charcoal mb-6">Contact Us</h1>
@@ -27,15 +27,15 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Options */}
-      <section className="py-24">
+      <section className="py-12 md:py-24">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16 md:mb-24">
             {/* WhatsApp Card */}
             <a
               href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center text-center p-12 rounded-2xl border border-border-light transition-all hover:-translate-y-1 hover:shadow-lg bg-gradient-to-br from-[#25d366]/5 to-[#25d366]/[0.02] hover:border-[#25d366]"
+              className="flex flex-col items-center text-center p-8 md:p-12 rounded-2xl border border-border-light transition-all hover:-translate-y-1 hover:shadow-lg bg-gradient-to-br from-[#25d366]/5 to-[#25d366]/[0.02] hover:border-[#25d366]"
             >
               <div className="text-[#25d366] mb-8">
                 <WhatsAppIcon className="w-12 h-12" />
@@ -52,7 +52,7 @@ export default function ContactPage() {
               href={getInstagramLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center text-center p-12 rounded-2xl border border-border-light transition-all hover:-translate-y-1 hover:shadow-lg bg-gradient-to-br from-[#bc1888]/5 to-[#f09433]/[0.02] hover:border-[#bc1888]"
+              className="flex flex-col items-center text-center p-8 md:p-12 rounded-2xl border border-border-light transition-all hover:-translate-y-1 hover:shadow-lg bg-gradient-to-br from-[#bc1888]/5 to-[#f09433]/[0.02] hover:border-[#bc1888]"
             >
               <div className="text-[#bc1888] mb-8">
                 <InstagramIcon className="w-12 h-12" />
@@ -66,7 +66,7 @@ export default function ContactPage() {
           </div>
 
           {/* Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-16 md:mb-24">
             <div className="p-8 bg-cream-dark rounded-xl text-center">
               <h4 className="font-heading text-sm font-semibold uppercase tracking-wider text-charcoal mb-4">🕐 Business Hours</h4>
               <div className="text-sm text-text-light leading-relaxed">
@@ -96,7 +96,7 @@ export default function ContactPage() {
           </div>
 
           {/* Custom Bouquet CTA */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-10 p-12 bg-gradient-to-br from-rose-bg to-sage-bg rounded-2xl">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10 p-8 md:p-12 bg-gradient-to-br from-rose-bg to-sage-bg rounded-2xl">
             <div className="max-w-[480px] text-center md:text-left">
               <h2 className="font-heading text-3xl font-medium text-charcoal mb-4">Looking for Something Custom?</h2>
               <p className="text-text-light leading-relaxed">
@@ -108,7 +108,7 @@ export default function ContactPage() {
               href={getWhatsAppCustomLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-whatsapp text-white text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-whatsapp-hover transition-all shadow-md shrink-0"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 md:px-8 md:py-4 bg-whatsapp text-white text-[13px] md:text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-whatsapp-hover transition-all shadow-md shrink-0 w-full md:w-auto"
             >
               <WhatsAppIcon className="w-5 h-5" />
               Enquire About Custom Bouquet
