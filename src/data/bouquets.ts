@@ -9,6 +9,7 @@ import Papa from "papaparse";
 export interface BouquetSize {
   name: string;
   price: number;
+  images?: string[];
 }
 
 export interface Bouquet {
@@ -44,73 +45,57 @@ export async function getBouquets(): Promise<Bouquet[]> {
         price: 259,
         sizes: [{ name: "Standard", price: 259 }],
         category: "elegant",
-        occasion: ["anniversary", "birthday", "just-because"],
+        occasion: ["anniversary", "birthday", "just-because", "romance"],
         flowerTypes: ["Lilies", "Mix Blooms"],
-        colors: ["white", "pink"],
-        colorLabel: "Soft Pink & White",
+        colors: ["pink", "white"],
+        colorLabel: "Vibrant Pink & White",
         style: "classic",
         description: "A beautiful arrangement of fresh Oriental Lilies and mix blooms. Perfect for elegant occasions.",
         careInstructions: "Trim stems at an angle and change water every 2 days.",
         availability: "available",
         tags: ["popular", "featured"],
-        images: ["/images/real/photo_5_2026-08-06_12-12-47.jpg", "/images/real/photo_6_2026-08-06_12-12-47.jpg"],
+        images: ["/images/bouquets/Oriental Lilies Bloom.jpg", "/images/bouquets/Oriental Lilies Bloom (1).jpg"],
         customisable: true,
         dateAdded: "2026-08-01",
       },
       {
-        id: "thumbelily-l",
-        name: "Thumbelily (L)",
-        price: 159,
-        sizes: [{ name: "Standard", price: 159 }],
-        category: "elegant",
-        occasion: ["anniversary", "birthday"],
-        flowerTypes: ["Thumbelina", "Lilies"],
-        colors: ["pink"],
-        colorLabel: "Pink",
-        style: "classic",
-        description: "A stunning large arrangement featuring Thumbelina and Lilies, crafted with our signature touches.",
-        careInstructions: "Trim stems at an angle and change water every 2 days.",
-        availability: "available",
-        tags: ["best-seller"],
-        images: ["/images/real/photo_1_2026-08-06_12-12-47.jpg", "/images/real/photo_2_2026-08-06_12-12-47.jpg"],
-        customisable: true,
-        dateAdded: "2026-08-01",
-      },
-      {
-        id: "thumbelily-m",
-        name: "Thumbelily (M)",
+        id: "thumbelily",
+        name: "Thumbelily",
         price: 139,
-        sizes: [{ name: "Standard", price: 139 }],
+        sizes: [
+          { name: "Medium", price: 139, images: ["/images/bouquets/Thumbelily (M).jpg", "/images/bouquets/Thumbelily (M) (2).jpg", "/images/bouquets/Thumbelily (M) (3).jpg"] },
+          { name: "Large", price: 159, images: ["/images/bouquets/Tumbelily (L).jpg", "/images/bouquets/Tumbelily (L) (2).jpg"] }
+        ],
         category: "elegant",
-        occasion: ["anniversary", "birthday"],
+        occasion: ["anniversary", "birthday", "romance", "just-because"],
         flowerTypes: ["Thumbelina", "Lilies"],
-        colors: ["pink"],
-        colorLabel: "Pink",
+        colors: ["pink", "peach", "white"],
+        colorLabel: "Pink, Peach & White",
         style: "classic",
-        description: "A lovely medium arrangement featuring Thumbelina and Lilies, perfect for showing you care.",
+        description: "Our signature arrangement featuring beautiful Thumbelina and Lilies. Available in multiple sizes to perfectly suit your occasion.",
         careInstructions: "Trim stems at an angle and change water every 2 days.",
         availability: "available",
-        tags: [],
-        images: ["/images/real/photo_3_2026-08-06_12-12-47.jpg", "/images/real/photo_4_2026-08-06_12-12-47.jpg"],
+        tags: ["best-seller", "popular"],
+        images: ["/images/bouquets/Tumbelily (L).jpg", "/images/bouquets/Tumbelily (L) (2).jpg", "/images/bouquets/Thumbelily (M).jpg", "/images/bouquets/Thumbelina (S).jpg"],
         customisable: true,
         dateAdded: "2026-08-01",
       },
       {
         id: "thumbelina-s",
-        name: "Thumbelina (S)",
+        name: "Thumbelina",
         price: 100,
         sizes: [{ name: "Standard", price: 100 }],
         category: "elegant",
         occasion: ["birthday", "just-because"],
         flowerTypes: ["Thumbelina", "Roses", "Mix blooms"],
-        colors: ["pink", "white"],
-        colorLabel: "Soft Pink & White",
+        colors: ["pink", "white", "blue"],
+        colorLabel: "Pastel Pink, White & Blue Accents",
         style: "classic",
         description: "A sweet small arrangement with Thumbelina, Roses, and mix blooms. Handcrafted with playful details.",
         careInstructions: "Trim stems at an angle and change water every 2 days.",
         availability: "available",
         tags: ["new"],
-        images: ["/images/real/photo_7_2026-08-06_12-12-47.jpg", "/images/real/photo_8_2026-08-06_12-12-47.jpg"],
+        images: ["/images/bouquets/Thumbelina (S).jpg", "/images/bouquets/Thumbelina (S) (2).jpg"],
         customisable: true,
         dateAdded: "2026-08-01",
       },
@@ -120,56 +105,97 @@ export async function getBouquets(): Promise<Bouquet[]> {
         price: 50,
         sizes: [{ name: "Standard", price: 50 }],
         category: "vibrant",
-        occasion: ["just-because", "birthday"],
+        occasion: ["just-because", "birthday", "thank-you"],
         flowerTypes: ["Chrysanthemums", "Gerbera", "Fillers"],
-        colors: ["mixed"],
-        colorLabel: "Mixed Colors",
+        colors: ["pink", "white", "yellow"],
+        colorLabel: "Pink, White & Yellow",
         style: "rustic",
         description: "A cheerful mix of Chrysanthemums, Gerbera, and seasonal fillers to bring a little moment of joy.",
         careInstructions: "Trim stems at an angle and change water every 2 days.",
         availability: "available",
         tags: ["popular"],
-        images: ["/images/real/photo_13_2026-08-06_12-12-47.jpg", "/images/real/photo_14_2026-08-06_12-12-47.jpg"],
+        images: ["/images/bouquets/Mix blooms.jpg", "/images/bouquets/Mix blooms (2).jpg", "/images/bouquets/Mix blooms (3).jpg", "/images/bouquets/Mix blooms (4).jpg"],
         customisable: true,
         dateAdded: "2026-08-01",
       },
       {
-        id: "lilies-bloom-l",
-        name: "Lilies Bloom (L)",
-        price: 129,
-        sizes: [{ name: "Standard", price: 129 }],
+        id: "lilies-bloom",
+        name: "Lilies Bloom",
+        price: 79,
+        sizes: [
+          { name: "Medium", price: 79, images: ["/images/bouquets/ Lilies bloom (M)  (1).jpg", "/images/bouquets/ Lilies bloom (M)  (2).jpg"] },
+          { name: "Large", price: 129, images: ["/images/bouquets/Lilies bloom (L).jpg", "/images/bouquets/Lilies bloom (L) (2).jpg"] }
+        ],
         category: "elegant",
-        occasion: ["anniversary", "birthday"],
+        occasion: ["anniversary", "birthday", "sympathy"],
         flowerTypes: ["Lilies", "Mix blooms"],
-        colors: ["white", "green"],
-        colorLabel: "White & Green",
+        colors: ["pink", "white"],
+        colorLabel: "Vibrant Pink & White",
         style: "classic",
-        description: "A large, elegant bouquet of Lilies and mix blooms, thoughtfully arranged by hand.",
+        description: "An elegant bouquet of Lilies and mix blooms, thoughtfully arranged by hand. Available in multiple sizes to make ordinary moments magical.",
         careInstructions: "Trim stems at an angle and change water every 2 days.",
         availability: "available",
         tags: ["featured"],
-        images: ["/images/real/photo_9_2026-08-06_12-12-47.jpg", "/images/real/photo_10_2026-08-06_12-12-47.jpg"],
+        images: ["/images/bouquets/Lilies bloom (L).jpg", "/images/bouquets/Lilies bloom (L) (2).jpg", "/images/bouquets/ Lilies bloom (M)  (1).jpg", "/images/bouquets/ Lilies bloom (M)  (2).jpg"],
         customisable: true,
         dateAdded: "2026-08-01",
       },
       {
-        id: "lilies-bloom-m",
-        name: "Lilies Bloom (M)",
-        price: 79,
-        sizes: [{ name: "Standard", price: 79 }],
+        id: "love-letter-lilies",
+        name: "Love Letter Lilies",
+        price: 60,
+        sizes: [{ name: "Standard", price: 60 }],
         category: "elegant",
-        occasion: ["anniversary", "birthday"],
-        flowerTypes: ["Lilies", "Mix blooms"],
-        colors: ["white", "green"],
-        colorLabel: "White & Green",
-        style: "classic",
-        description: "A medium, elegant bouquet of Lilies and mix blooms to make ordinary moments magical.",
+        occasion: ["romance", "anniversary", "just-because"],
+        flowerTypes: ["Lilies", "Fillers"],
+        colors: ["pink", "white", "blue"],
+        colorLabel: "Pink, White & Blue Accents",
+        style: "romantic",
+        description: "A lovely and delicate arrangement of lilies meant to send a heartfelt message.",
         careInstructions: "Trim stems at an angle and change water every 2 days.",
         availability: "available",
-        tags: [],
-        images: ["/images/real/photo_11_2026-08-06_12-12-47.jpg", "/images/real/photo_12_2026-08-06_12-12-47.jpg"],
+        tags: ["new"],
+        images: ["/images/bouquets/Love Letter Lilies.jpg", "/images/bouquets/Love Letter Lilies (2).jpg"],
         customisable: true,
-        dateAdded: "2026-08-01",
+        dateAdded: "2026-08-11",
+      },
+      {
+        id: "orchid-bloom",
+        name: "Orchid bloom",
+        price: 80,
+        sizes: [{ name: "Standard", price: 80 }],
+        category: "elegant",
+        occasion: ["birthday", "thank-you", "sympathy"],
+        flowerTypes: ["Orchids"],
+        colors: ["cream", "pink", "green"],
+        colorLabel: "Cream & Soft Pink",
+        style: "modern",
+        description: "An exotic and striking display of fresh orchids, guaranteed to leave an impression.",
+        careInstructions: "Keep in a cool spot and lightly mist the blooms.",
+        availability: "available",
+        tags: ["featured", "new"],
+        images: ["/images/bouquets/Orchid bloom (2).jpg", "/images/bouquets/Orchid bloom.jpg"],
+        customisable: true,
+        dateAdded: "2026-08-11",
+      },
+      {
+        id: "lacey-lily-blush",
+        name: "Lacey Lily Blush",
+        price: 90,
+        sizes: [{ name: "Standard", price: 90 }],
+        category: "elegant",
+        occasion: ["birthday", "romance", "anniversary"],
+        flowerTypes: ["Lilies", "Mix blooms"],
+        colors: ["blush", "pink", "white"],
+        colorLabel: "Blush Pink & White",
+        style: "romantic",
+        description: "A soft, blushing arrangement of exquisite lilies and delicate filler flowers.",
+        careInstructions: "Trim stems at an angle and change water every 2 days.",
+        availability: "available",
+        tags: ["new", "best-seller"],
+        images: ["/images/bouquets/Lacey Lily Blush (2).jpg", "/images/bouquets/Lacey Lily Blush.jpg"],
+        customisable: true,
+        dateAdded: "2026-08-11",
       }
     ];
   }
@@ -180,25 +206,25 @@ export async function getBouquets(): Promise<Bouquet[]> {
     });
     if (!res.ok) throw new Error("Failed to fetch bouquets from Google Sheets");
     let csv = await res.text();
-    
+
     // Find the actual header row (some sheets have empty first rows)
     const headerIndex = csv.toLowerCase().indexOf('bouquet name');
     if (headerIndex !== -1) {
       const lineStart = csv.lastIndexOf('\n', headerIndex);
       csv = csv.substring(lineStart === -1 ? 0 : lineStart + 1);
     }
-    
+
     const { data } = Papa.parse(csv, { header: true, skipEmptyLines: true });
-    
+
     // Some sheets have a blank first column, so data might be keyed weirdly. 
     // We'll normalize keys to lowercase and strip whitespace to make it robust.
     const normalizeKey = (key: string) => key.toLowerCase().replace(/[^a-z0-9]/g, '');
-    
+
     const validData = data.filter((row: any) => {
       const name = row['Bouquet Name'] || row.name || Object.entries(row).find(([k]) => normalizeKey(k) === 'bouquetname')?.[1];
       return name && String(name).trim() !== "";
     });
-    
+
     return validData.map((row: any) => {
       // Helper to extract by fuzzy key
       const getVal = (possibleKeys: string[]) => {

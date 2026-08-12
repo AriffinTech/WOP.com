@@ -44,7 +44,7 @@ export default function BouquetGallery({ images }: { images: string[] }) {
             <div
               key={idx}
               className="w-full h-full flex-shrink-0 snap-center bg-cream-dark bg-cover bg-center"
-              style={{ backgroundImage: `url(${img})` }}
+              style={{ backgroundImage: `url('${img}')` }}
             />
           ))}
         </div>
@@ -89,7 +89,7 @@ export default function BouquetGallery({ images }: { images: string[] }) {
               key={idx}
               onClick={() => scrollToIndex(idx)}
               className={`aspect-square bg-cream-dark rounded-lg bg-cover bg-center cursor-pointer border-2 transition-colors ${currentIndex === idx ? "border-charcoal" : "border-transparent hover:border-border-light"}`}
-              style={{ backgroundImage: `url(${img})` }}
+              style={{ backgroundImage: `url('${img}')` }}
             />
           ))}
         </div>

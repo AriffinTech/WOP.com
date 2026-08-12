@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import Link from "next/link";
 import BouquetCard from "@/components/BouquetCard";
 import PriceSlider from "@/components/PriceSlider";
 import {
@@ -9,6 +10,7 @@ import {
   colorOptions,
   styleOptions,
   sortOptions,
+  occasions,
 } from "@/data/bouquets";
 
 interface CatalogueContentProps {
@@ -22,6 +24,7 @@ export default function CatalogueContent({ initialBouquets, flowerOptions }: Cat
 
   const currentFlower = searchParams.get("flower") || "";
   const currentColor = searchParams.get("color") || "";
+  const currentOccasion = searchParams.get("occasion") || "";
   const currentMinPrice = parseInt(searchParams.get("minPrice") || "0", 10);
   const currentMaxPrice = parseInt(searchParams.get("maxPrice") || "500", 10);
   const currentStyle = searchParams.get("style") || "";
@@ -42,6 +45,10 @@ export default function CatalogueContent({ initialBouquets, flowerOptions }: Cat
 
   const filteredBouquets = useMemo(() => {
     let result = [...initialBouquets];
+
+    if (currentOccasion) {
+      result = result.filter((b) => b.occasion.includes(currentOccasion));
+    }
 
     if (currentFlower) {
       result = result.filter((b) =>
@@ -80,7 +87,7 @@ export default function CatalogueContent({ initialBouquets, flowerOptions }: Cat
     }
 
     return result;
-  }, [initialBouquets, currentFlower, currentColor, currentStyle, currentMinPrice, currentMaxPrice, currentSort]);
+  }, [initialBouquets, currentFlower, currentColor, currentStyle, currentMinPrice, currentMaxPrice, currentSort, currentOccasion]);
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-12 md:py-24 pt-[104px]">
@@ -103,67 +110,40 @@ export default function CatalogueContent({ initialBouquets, flowerOptions }: Cat
           <div>
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-heading font-medium tracking-wider uppercase text-sm">Filters</h3>
-              {(currentFlower || currentColor || currentStyle || currentMinPrice > 0 || currentMaxPrice < 500) && (
+              {(currentFlower || currentColor || currentOccasion || currentStyle || currentMinPrice > 0 || currentMaxPrice < 500) && (
                 <button onClick={clearFilters} className="text-xs text-text-muted hover:text-rose transition-colors underline">
                   Clear All
                 </button>
               )}
             </div>
 
-            {/* Price Filter */}
+            {/* Shop Categories */}
             <div className="py-6 border-t border-border-light">
-              <h4 className="text-sm font-semibold mb-6">Price Range</h4>
-              <PriceSlider
-                minPrice={currentMinPrice}
-                maxPrice={currentMaxPrice}
-                onPriceChange={(min: number, max: number) => {
-                  const params = new URLSearchParams(searchParams.toString());
-                  if (min > 0) params.set("minPrice", min.toString());
-                  else params.delete("minPrice");
-                  if (max < 500) params.set("maxPrice", max.toString());
-                  else params.delete("maxPrice");
-                  router.push(`/bouquets?${params.toString()}`);
-                }}
-              />
-            </div>
-
-            {/* Flower Type */}
-            <div className="py-6 border-t border-border-light">
-              <h4 className="text-sm font-semibold mb-4">Flower Type</h4>
-              <div className="flex flex-col gap-3">
-                <button
-                  className={`text-left text-sm transition-colors ${!currentFlower ? "font-semibold text-rose" : "text-text-light hover:text-charcoal"}`}
-                  onClick={() => updateFilter("flower", "")}
+              <div className="flex flex-col gap-4">
+                <Link
+                  href="/bouquets?sort=popular"
+                  className={`text-left text-sm transition-colors ${currentSort === "popular" && !currentOccasion ? "font-semibold text-rose" : "text-text-light hover:text-charcoal"}`}
                 >
-                  All Flowers
-                </button>
-                {flowerOptions.map((fl) => (
-                  <button
-                    key={fl.value}
-                    className={`text-left text-sm transition-colors ${currentFlower === fl.value ? "font-semibold text-rose" : "text-text-light hover:text-charcoal"}`}
-                    onClick={() => updateFilter("flower", fl.value)}
-                  >
-                    {fl.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Colors */}
-            <div className="py-6 border-t border-border-light">
-              <h4 className="text-sm font-semibold mb-4">Color Theme</h4>
-              <div className="flex flex-wrap gap-2">
-                {colorOptions.map((c) => (
-                  <button
-                    key={c.value}
-                    onClick={() => updateFilter("color", currentColor === c.value ? "" : c.value)}
-                    className={`w-8 h-8 rounded-full border-2 transition-all ${
-                      currentColor === c.value ? "border-rose scale-110 shadow-md" : "border-transparent hover:scale-110"
-                    }`}
-                    style={{ backgroundColor: (c as any).hex || c.value }}
-                    title={c.label}
-                  />
-                ))}
+                  Bestsellers
+                </Link>
+                <Link
+                  href="/bouquets?occasion=birthday"
+                  className={`text-left text-sm transition-colors ${currentOccasion === "birthday" ? "font-semibold text-rose" : "text-text-light hover:text-charcoal"}`}
+                >
+                  Birthday
+                </Link>
+                <Link
+                  href="/bouquets?occasion=romance"
+                  className={`text-left text-sm transition-colors ${currentOccasion === "romance" ? "font-semibold text-rose" : "text-text-light hover:text-charcoal"}`}
+                >
+                  Romance
+                </Link>
+                <Link
+                  href="/bouquets?occasion=just-because"
+                  className={`text-left text-sm transition-colors ${currentOccasion === "just-because" ? "font-semibold text-rose" : "text-text-light hover:text-charcoal"}`}
+                >
+                  Just Because
+                </Link>
               </div>
             </div>
 

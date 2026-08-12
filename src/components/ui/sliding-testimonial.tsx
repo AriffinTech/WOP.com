@@ -45,7 +45,7 @@ const FUITestimonialWithSlide = () => {
                     <div className='mb-12'>
                         <span className="text-sm font-semibold tracking-wider uppercase text-sage mb-2 block text-center">Customer Reviews</span>
                         <h2 className="font-heading text-3xl md:text-5xl font-bold text-charcoal mb-4 text-center">Loved by Our Customers</h2>
-                        <p className="mt-4 max-w-xl mx-auto text-lg text-center tracking-tight text-text-light">
+                        <p className="mt-4 max-w-xl mx-auto text-base md:text-lg text-center tracking-tight text-text-light">
                             Every bouquet tells a story. Discover what our customers have to say about their experience with us.
                         </p>
                     </div>
@@ -55,24 +55,24 @@ const FUITestimonialWithSlide = () => {
                         <div className="flex animate-x-slider gap-6 w-max hover:[animation-play-state:paused]">
                             {duplicatedTestimonials.map((testimonial, indx) => {
                                 return (
-                                    <div key={indx} className="border border-border-light flex flex-col bg-surface rounded-2xl shrink-0 grow-0 w-[350px] md:w-[450px] h-full shadow-sm justify-between transition-transform hover:-translate-y-1">
-                                        <p className="px-8 py-8 text-pretty text-lg font-medium text-text-light italic leading-relaxed">
+                                    <div key={indx} className="border border-border-light flex flex-col bg-surface rounded-2xl shrink-0 grow-0 w-[280px] md:w-[400px] h-full shadow-sm justify-between transition-transform hover:-translate-y-1">
+                                        <p className="px-6 py-6 md:px-8 md:py-8 text-pretty text-base md:text-lg font-medium text-text-light italic leading-relaxed">
                                             "{testimonial.description}"
                                         </p>
                                         <div className="border-t border-border-light w-full flex gap-1 overflow-hidden">
-                                            <div className="flex-1 flex gap-4 items-center px-6 py-4">
+                                            <div className="flex-1 flex gap-4 items-center px-4 md:px-6 py-3 md:py-4">
                                                 <div className='flex flex-col flex-1 gap-0 justify-center items-start'>
-                                                    <h5 className='text-base font-semibold font-heading text-charcoal'>{testimonial.name}</h5>
-                                                    <p className='text-sm text-text-muted'>{testimonial.profession}</p>
+                                                    <h5 className='text-sm md:text-base font-semibold font-heading text-charcoal'>{testimonial.name}</h5>
+                                                    <p className='text-xs md:text-sm text-text-muted'>{testimonial.profession}</p>
                                                 </div>
                                             </div>
                                             <div className='w-[1px] bg-border-light' />
-                                            <div className='flex items-center px-6 gap-1 text-accent'>
-                                                <Star className="w-4 h-4 fill-current" />
-                                                <Star className="w-4 h-4 fill-current" />
-                                                <Star className="w-4 h-4 fill-current" />
-                                                <Star className="w-4 h-4 fill-current" />
-                                                <Star className="w-4 h-4 fill-current" />
+                                            <div className='flex items-center px-4 md:px-6 gap-1 text-accent'>
+                                                <Star className="w-3 h-3 md:w-4 md:h-4 fill-current" />
+                                                <Star className="w-3 h-3 md:w-4 md:h-4 fill-current" />
+                                                <Star className="w-3 h-3 md:w-4 md:h-4 fill-current" />
+                                                <Star className="w-3 h-3 md:w-4 md:h-4 fill-current" />
+                                                <Star className="w-3 h-3 md:w-4 md:h-4 fill-current" />
                                             </div>
                                         </div>
                                     </div>

@@ -101,23 +101,23 @@ export default function FAQPage() {
   return (
     <div className="pt-[104px]">
       {/* Header */}
-      <section className="bg-cream-dark border-b border-border-light py-24 md:py-32">
+      <section className="bg-cream-dark border-b border-border-light py-16 md:py-24 lg:py-32">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <span className="text-xs font-semibold tracking-wider uppercase text-sage mb-3 block">Got Questions?</span>
-          <h1 className="font-heading text-4xl md:text-6xl font-medium text-charcoal mb-6">Frequently Asked Questions</h1>
-          <p className="text-lg md:text-xl text-text-light leading-relaxed">
+          <h1 className="font-heading text-4xl md:text-6xl font-medium text-charcoal mb-4 md:mb-6">Frequently Asked Questions</h1>
+          <p className="text-base md:text-lg lg:text-xl text-text-light leading-relaxed">
             Everything you need to know about ordering, delivery, and our bouquets.
           </p>
         </div>
       </section>
 
       {/* FAQ Content */}
-      <section className="py-24">
+      <section className="py-12 md:py-24">
         <div className="max-w-3xl mx-auto px-6">
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-12 md:gap-16">
             {faqData.map((section) => (
               <div key={section.category}>
-                <h2 className="font-heading text-2xl font-medium text-charcoal mb-6 pb-4 border-b-2 border-rose-light inline-block">
+                <h2 className="font-heading text-xl md:text-2xl font-medium text-charcoal mb-4 md:mb-6 pb-3 md:pb-4 border-b-2 border-rose-light inline-block">
                   {section.category}
                 </h2>
                 <div className="flex flex-col">
@@ -147,9 +147,9 @@ export default function FAQPage() {
           </div>
 
           {/* Still have questions */}
-          <div className="mt-24 p-12 bg-cream-dark rounded-2xl text-center border border-border-light">
-            <h3 className="font-heading text-2xl font-medium text-charcoal mb-4">Still have questions?</h3>
-            <p className="text-text-light mb-8">We're happy to help! Reach out to us directly.</p>
+          <div className="mt-16 md:mt-24 p-8 md:p-12 bg-cream-dark rounded-2xl text-center border border-border-light">
+            <h3 className="font-heading text-xl md:text-2xl font-medium text-charcoal mb-3 md:mb-4">Still have questions?</h3>
+            <p className="text-sm md:text-base text-text-light mb-6 md:mb-8">We're happy to help! Reach out to us directly.</p>
             <a
               href={getWhatsAppLink()}
               target="_blank"

@@ -29,7 +29,7 @@ export default function Header() {
   const navLinks = [
     { href: "/bouquets", label: "All Bouquets" },
     { href: "/bouquets?occasion=birthday", label: "Birthday" },
-    { href: "/bouquets?occasion=anniversary", label: "Anniversary" },
+    { href: "/bouquets?sort=popular", label: "Bestsellers" },
     { href: "/about", label: "Our Story" },
     { href: "/faq", label: "FAQ" },
   ];
@@ -38,7 +38,7 @@ export default function Header() {
     <>
       {/* Top Announcement Bar */}
       <div className="bg-[#61ab7a] text-white text-[11px] md:text-xs font-medium text-center py-2 px-4 fixed top-0 w-full z-[60] tracking-wide">
-        Order by 5 PM for same-day delivery in Klang Valley
+        Handcrafted with love in every arrangement ✨
       </div>
 
       <header

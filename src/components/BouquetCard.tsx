@@ -22,7 +22,7 @@ export default function BouquetCard({ bouquet }: { bouquet: Bouquet }) {
           <div
             className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
             style={{
-              backgroundImage: `url(${bouquet.images?.[0] || "/images/placeholder.jpg"})`,
+              backgroundImage: `url('${bouquet.images?.[0] || "/images/placeholder.jpg"}')`,
             }}
           />
           {tag && (
@@ -51,10 +51,11 @@ export default function BouquetCard({ bouquet }: { bouquet: Bouquet }) {
           </div>
         </div>
 
-        {/* Info */}
         <div className="flex flex-col text-center">
           <h3 className="font-heading text-base md:text-lg font-medium text-charcoal mb-0.5 md:mb-1 leading-tight">{bouquet.name}</h3>
-          <p className="text-xs md:text-sm font-semibold text-charcoal mb-0.5 md:mb-1">From RM {bouquet.price}</p>
+          <p className="text-xs md:text-sm font-semibold text-charcoal mb-0.5 md:mb-1">
+            {bouquet.sizes && bouquet.sizes.length > 1 ? "From RM " : "RM "}{bouquet.price}
+          </p>
           <p className="text-[11px] md:text-[13px] text-text-light">{bouquet.colorLabel}</p>
         </div>
       </Link>

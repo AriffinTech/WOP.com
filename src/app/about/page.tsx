@@ -11,37 +11,37 @@ export default function AboutPage() {
   return (
     <div className="pt-[104px]">
       {/* Header */}
-      <section className="bg-cream-dark border-b border-border-light py-24 md:py-32">
+      <section className="bg-cream-dark border-b border-border-light py-16 md:py-24 lg:py-32">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <span className="text-xs font-semibold tracking-wider uppercase text-sage mb-3 block">About Us</span>
-          <h1 className="font-heading text-4xl md:text-6xl font-medium text-charcoal mb-6">Our Story</h1>
-          <p className="text-lg md:text-xl text-text-light leading-relaxed">
-            From a simple love for flowers to a home-based boutique — here's how it all began.
+          <h1 className="font-heading text-4xl md:text-6xl font-medium text-charcoal mb-4 md:mb-6">Our Story</h1>
+          <p className="text-base md:text-lg lg:text-xl text-text-light leading-relaxed">
+            From a simple love for flowers to a home-based boutique, here's how it all began.
           </p>
         </div>
       </section>
 
       {/* Story */}
-      <section className="py-24">
+      <section className="py-12 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-24 items-center">
             <div className="relative">
               <div className="w-full aspect-[3/4] bg-gradient-to-br from-rose-bg to-sage-bg rounded-2xl bg-[url('/images/bouquets/photo_2026-08-07_00-28-17.jpg')] bg-cover bg-center" />
               <div className="absolute -bottom-5 -left-5 w-32 h-32 bg-champagne-light rounded-2xl -z-10 opacity-60" />
             </div>
             <div className="max-w-[480px]">
-              <h2 className="font-heading text-3xl md:text-4xl font-medium text-charcoal mb-8">Pretty blooms, prettier moments</h2>
-              <p className="text-text-light leading-relaxed mb-6">
+              <h2 className="font-heading text-3xl md:text-4xl font-medium text-charcoal mb-6 md:mb-8 mt-10 md:mt-0">Pretty blooms, prettier moments</h2>
+              <p className="text-sm md:text-base text-text-light leading-relaxed mb-4 md:mb-6">
                 Wisp of petals began as a fun weekend side quest between two sisters who just wanted to create pretty blooms and bring the Pinterest aesthetic to life. 
               </p>
-              <p className="text-text-light leading-relaxed mb-6">
+              <p className="text-sm md:text-base text-text-light leading-relaxed mb-4 md:mb-6">
                 Somewhere between late nights, polkadots, ribbons, laces, and countless blooms, we realised we weren’t just making flowers, but little moments of joy and love. So we created wisp of petals, a home-based florist dedicated to designing whimsical, Pinterest & IG-worthy blooms that make ordinary moments feel a little more magical.
               </p>
-              <h2 className="font-heading text-2xl font-medium text-charcoal mb-4 mt-8">What makes our bouquets special?</h2>
-              <p className="text-text-light leading-relaxed mb-6">
+              <h2 className="font-heading text-2xl font-medium text-charcoal mb-3 md:mb-4 mt-8">What makes our bouquets special?</h2>
+              <p className="text-sm md:text-base text-text-light leading-relaxed mb-4 md:mb-6">
                 At wisp of petals, we don’t believe bigger always means better. Sometimes, a bouquet created with intention, playful details and full personality carries much more meaning than an extravagant bouquet with hundreds of stems.
               </p>
-              <p className="text-text-light leading-relaxed">
+              <p className="text-sm md:text-base text-text-light leading-relaxed">
                 Each and every one of our bouquets is thoughtfully arranged by hand with soft colours, delicate textures, and our signature touches of polkas, laces, ribbons and pearls. Because we believe beautiful blooms shouldn’t only exist on your Pinterest board. They should exist in your hand.
               </p>
             </div>
@@ -50,14 +50,14 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-cream-dark">
+      <section className="py-16 md:py-24 bg-cream-dark">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <span className="text-xs font-semibold tracking-wider uppercase text-sage mb-3 block">What We Stand For</span>
-          <h2 className="font-heading text-4xl md:text-5xl font-medium text-charcoal mb-16">Our Values</h2>
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-medium text-charcoal mb-10 md:mb-16">Our Values</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-surface p-10 rounded-2xl border border-border-light transition-transform hover:-translate-y-1 hover:shadow-md">
-              <span className="text-4xl block mb-6">🌸</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="bg-surface p-8 md:p-10 rounded-2xl border border-border-light transition-transform hover:-translate-y-1 hover:shadow-md">
+              <span className="text-4xl block mb-4 md:mb-6">🌸</span>
               <h3 className="font-heading text-xl font-medium text-charcoal mb-3">Just Because</h3>
               <p className="text-sm text-text-light leading-relaxed">
                 We believe everyone deserves blooms as pretty and whimsical as they are. Not just for special occasions, but just because.
@@ -89,10 +89,10 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="font-heading text-4xl font-medium text-charcoal mb-6">Let's Create Something Beautiful</h2>
-          <p className="text-lg text-text-light leading-relaxed mb-10">
+          <h2 className="font-heading text-3xl md:text-4xl font-medium text-charcoal mb-4 md:mb-6">Let's Create Something Beautiful</h2>
+          <p className="text-base md:text-lg text-text-light leading-relaxed mb-8 md:mb-10">
             Browse our collection or reach out to discuss a custom arrangement.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
