@@ -39,165 +39,563 @@ const USE_GOOGLE_SHEETS = false; // Set to true when you want to use the live Go
 export async function getBouquets(): Promise<Bouquet[]> {
   if (!USE_GOOGLE_SHEETS) {
     return [
+  {
+    "id": "romantic-lilies-bloom",
+    "name": "Romantic Lilies Bloom",
+    "price": 259,
+    "sizes": [
       {
-        id: "oriental-lilies-bloom",
-        name: "Oriental Lilies Bloom",
-        price: 259,
-        sizes: [{ name: "Standard", price: 259 }],
-        category: "elegant",
-        occasion: ["anniversary", "birthday", "just-because", "romance"],
-        flowerTypes: ["Lilies", "Mix Blooms"],
-        colors: ["pink", "white"],
-        colorLabel: "Vibrant Pink & White",
-        style: "classic",
-        description: "A beautiful arrangement of fresh Oriental Lilies and mix blooms. Perfect for elegant occasions.",
-        careInstructions: "Trim stems at an angle and change water every 2 days.",
-        availability: "available",
-        tags: ["popular", "featured"],
-        images: ["/images/bouquets/Oriental Lilies Bloom.jpg", "/images/bouquets/Oriental Lilies Bloom (1).jpg"],
-        customisable: true,
-        dateAdded: "2026-08-01",
-      },
-      {
-        id: "thumbelily",
-        name: "Thumbelily",
-        price: 139,
-        sizes: [
-          { name: "Medium", price: 139, images: ["/images/bouquets/Thumbelily (M).jpg", "/images/bouquets/Thumbelily (M) (2).jpg", "/images/bouquets/Thumbelily (M) (3).jpg"] },
-          { name: "Large", price: 159, images: ["/images/bouquets/Tumbelily (L).jpg", "/images/bouquets/Tumbelily (L) (2).jpg"] }
-        ],
-        category: "elegant",
-        occasion: ["anniversary", "birthday", "romance", "just-because"],
-        flowerTypes: ["Thumbelina", "Lilies"],
-        colors: ["pink", "peach", "white"],
-        colorLabel: "Pink, Peach & White",
-        style: "classic",
-        description: "Our signature arrangement featuring beautiful Thumbelina and Lilies. Available in multiple sizes to perfectly suit your occasion.",
-        careInstructions: "Trim stems at an angle and change water every 2 days.",
-        availability: "available",
-        tags: ["best-seller", "popular"],
-        images: ["/images/bouquets/Tumbelily (L).jpg", "/images/bouquets/Tumbelily (L) (2).jpg", "/images/bouquets/Thumbelily (M).jpg", "/images/bouquets/Thumbelina (S).jpg"],
-        customisable: true,
-        dateAdded: "2026-08-01",
-      },
-      {
-        id: "thumbelina-s",
-        name: "Thumbelina",
-        price: 100,
-        sizes: [{ name: "Standard", price: 100 }],
-        category: "elegant",
-        occasion: ["birthday", "just-because"],
-        flowerTypes: ["Thumbelina", "Roses", "Mix blooms"],
-        colors: ["pink", "white", "blue"],
-        colorLabel: "Pastel Pink, White & Blue Accents",
-        style: "classic",
-        description: "A sweet small arrangement with Thumbelina, Roses, and mix blooms. Handcrafted with playful details.",
-        careInstructions: "Trim stems at an angle and change water every 2 days.",
-        availability: "available",
-        tags: ["new"],
-        images: ["/images/bouquets/Thumbelina (S).jpg", "/images/bouquets/Thumbelina (S) (2).jpg"],
-        customisable: true,
-        dateAdded: "2026-08-01",
-      },
-      {
-        id: "mix-blooms",
-        name: "Mix Blooms",
-        price: 50,
-        sizes: [{ name: "Standard", price: 50 }],
-        category: "vibrant",
-        occasion: ["just-because", "birthday", "thank-you"],
-        flowerTypes: ["Chrysanthemums", "Gerbera", "Fillers"],
-        colors: ["pink", "white", "yellow"],
-        colorLabel: "Pink, White & Yellow",
-        style: "rustic",
-        description: "A cheerful mix of Chrysanthemums, Gerbera, and seasonal fillers to bring a little moment of joy.",
-        careInstructions: "Trim stems at an angle and change water every 2 days.",
-        availability: "available",
-        tags: ["popular"],
-        images: ["/images/bouquets/Mix blooms.jpg", "/images/bouquets/Mix blooms (2).jpg", "/images/bouquets/Mix blooms (3).jpg", "/images/bouquets/Mix blooms (4).jpg"],
-        customisable: true,
-        dateAdded: "2026-08-01",
-      },
-      {
-        id: "lilies-bloom",
-        name: "Lilies Bloom",
-        price: 79,
-        sizes: [
-          { name: "Medium", price: 79, images: ["/images/bouquets/ Lilies bloom (M)  (1).jpg", "/images/bouquets/ Lilies bloom (M)  (2).jpg"] },
-          { name: "Large", price: 129, images: ["/images/bouquets/Lilies bloom (L).jpg", "/images/bouquets/Lilies bloom (L) (2).jpg"] }
-        ],
-        category: "elegant",
-        occasion: ["anniversary", "birthday", "sympathy"],
-        flowerTypes: ["Lilies", "Mix blooms"],
-        colors: ["pink", "white"],
-        colorLabel: "Vibrant Pink & White",
-        style: "classic",
-        description: "An elegant bouquet of Lilies and mix blooms, thoughtfully arranged by hand. Available in multiple sizes to make ordinary moments magical.",
-        careInstructions: "Trim stems at an angle and change water every 2 days.",
-        availability: "available",
-        tags: ["featured"],
-        images: ["/images/bouquets/Lilies bloom (L).jpg", "/images/bouquets/Lilies bloom (L) (2).jpg", "/images/bouquets/ Lilies bloom (M)  (1).jpg", "/images/bouquets/ Lilies bloom (M)  (2).jpg"],
-        customisable: true,
-        dateAdded: "2026-08-01",
-      },
-      {
-        id: "love-letter-lilies",
-        name: "Love Letter Lilies",
-        price: 60,
-        sizes: [{ name: "Standard", price: 60 }],
-        category: "elegant",
-        occasion: ["romance", "anniversary", "just-because"],
-        flowerTypes: ["Lilies", "Fillers"],
-        colors: ["pink", "white", "blue"],
-        colorLabel: "Pink, White & Blue Accents",
-        style: "romantic",
-        description: "A lovely and delicate arrangement of lilies meant to send a heartfelt message.",
-        careInstructions: "Trim stems at an angle and change water every 2 days.",
-        availability: "available",
-        tags: ["new"],
-        images: ["/images/bouquets/Love Letter Lilies.jpg", "/images/bouquets/Love Letter Lilies (2).jpg"],
-        customisable: true,
-        dateAdded: "2026-08-11",
-      },
-      {
-        id: "orchid-bloom",
-        name: "Orchid bloom",
-        price: 80,
-        sizes: [{ name: "Standard", price: 80 }],
-        category: "elegant",
-        occasion: ["birthday", "thank-you", "sympathy"],
-        flowerTypes: ["Orchids"],
-        colors: ["cream", "pink", "green"],
-        colorLabel: "Cream & Soft Pink",
-        style: "modern",
-        description: "An exotic and striking display of fresh orchids, guaranteed to leave an impression.",
-        careInstructions: "Keep in a cool spot and lightly mist the blooms.",
-        availability: "available",
-        tags: ["featured", "new"],
-        images: ["/images/bouquets/Orchid bloom (2).jpg", "/images/bouquets/Orchid bloom.jpg"],
-        customisable: true,
-        dateAdded: "2026-08-11",
-      },
-      {
-        id: "lacey-lily-blush",
-        name: "Lacey Lily Blush",
-        price: 90,
-        sizes: [{ name: "Standard", price: 90 }],
-        category: "elegant",
-        occasion: ["birthday", "romance", "anniversary"],
-        flowerTypes: ["Lilies", "Mix blooms"],
-        colors: ["blush", "pink", "white"],
-        colorLabel: "Blush Pink & White",
-        style: "romantic",
-        description: "A soft, blushing arrangement of exquisite lilies and delicate filler flowers.",
-        careInstructions: "Trim stems at an angle and change water every 2 days.",
-        availability: "available",
-        tags: ["new", "best-seller"],
-        images: ["/images/bouquets/Lacey Lily Blush (2).jpg", "/images/bouquets/Lacey Lily Blush.jpg"],
-        customisable: true,
-        dateAdded: "2026-08-11",
+        "name": "Standard",
+        "price": 259
       }
-    ];
+    ],
+    "category": "elegant",
+    "occasion": [
+      "romance",
+      "anniversary"
+    ],
+    "flowerTypes": [
+      "Lilies",
+      "Mix Blooms"
+    ],
+    "colors": [],
+    "colorLabel": "",
+    "style": "classic",
+    "description": "A romantic mix of vibrant lilies, roses, and delicate blooms. Wrapped in soft pastel tones with a touch of dreamy, full, and perfect for heartfelt surprises.",
+    "careInstructions": "",
+    "availability": "available",
+    "tags": [
+      "best-seller"
+    ],
+    "images": [
+      "/images/bouquets/Romantic Lilies Bloom (1).jpg",
+      "/images/bouquets/Romantic Lilies Bloom (2).jpg"
+    ],
+    "customisable": true,
+    "dateAdded": "2026-08-17"
+  },
+  {
+    "id": "romantic-rose-lilies-bloom",
+    "name": "Romantic Rose Lilies Bloom",
+    "price": 269,
+    "sizes": [
+      {
+        "name": "Standard",
+        "price": 269
+      }
+    ],
+    "category": "elegant",
+    "occasion": [
+      "romance",
+      "anniversary"
+    ],
+    "flowerTypes": [
+      "Rose Lilies",
+      "Mix Blooms"
+    ],
+    "colors": [],
+    "colorLabel": "",
+    "style": "classic",
+    "description": "A romantic mix of soft rose lilies, roses, and delicate blooms. Wrapped in soft pastel tones with a touch of dreamy, full, and perfect for heartfelt surprises.",
+    "careInstructions": "",
+    "availability": "available",
+    "tags": [],
+    "images": [
+      "/images/bouquets/Romantic Rose Lilies Bloom (1).jpg",
+      "/images/bouquets/Romantic Rose Lilies Bloom (2).jpg",
+      "/images/bouquets/Romantic Rose Lilies Bloom (3).jpg"
+    ],
+    "customisable": true,
+    "dateAdded": "2026-08-17"
+  },
+  {
+    "id": "thumbelily",
+    "name": "Thumbelily",
+    "price": 139,
+    "sizes": [
+      {
+        "name": "Large",
+        "price": 159,
+        "images": [
+          "/images/bouquets/Thumbelily Size L (1).jpg",
+          "/images/bouquets/Thumbelily Size L (2).jpg",
+          "/images/bouquets/Thumbelily Size L (3).jpg",
+          "/images/bouquets/Thumbelily Size L (4).jpg"
+        ]
+      },
+      {
+        "name": "Medium",
+        "price": 139,
+        "images": [
+          "/images/bouquets/Thumbelily Size M (1).jpg",
+          "/images/bouquets/Thumbelily Size M (2).jpg",
+          "/images/bouquets/Thumbelily Size M (3).jpg"
+        ]
+      }
+    ],
+    "category": "elegant",
+    "occasion": [
+      "birthday",
+      "just-because",
+      "anniversary"
+    ],
+    "flowerTypes": [
+      "Thumbelina",
+      "Lilies"
+    ],
+    "colors": [],
+    "colorLabel": "",
+    "style": "classic",
+    "description": "Cheerful blend with a pop of pink, vibrant yellow, colourful seasonal flowers. Bright, fresh and full of joy.",
+    "careInstructions": "",
+    "availability": "available",
+    "tags": [
+      "best-seller"
+    ],
+    "images": [
+      "/images/bouquets/Thumbelily Size L (1).jpg",
+      "/images/bouquets/Thumbelily Size L (2).jpg",
+      "/images/bouquets/Thumbelily Size L (3).jpg",
+      "/images/bouquets/Thumbelily Size L (4).jpg"
+    ],
+    "customisable": true,
+    "dateAdded": "2026-08-17"
+  },
+  {
+    "id": "thumbelina",
+    "name": "Thumbelina",
+    "price": 100,
+    "sizes": [
+      {
+        "name": "Small",
+        "price": 100,
+        "images": [
+          "/images/bouquets/Thumbelina Size S (1).jpg",
+          "/images/bouquets/Thumbelina Size S (2).jpg"
+        ]
+      },
+      {
+        "name": "Medium",
+        "price": 139,
+        "images": [
+          "/images/bouquets/Thumbelina Size M (1).jpg",
+          "/images/bouquets/Thumbelina Size M (2).jpg",
+          "/images/bouquets/Thumbelina Size M (3).jpg"
+        ]
+      }
+    ],
+    "category": "elegant",
+    "occasion": [
+      "birthday",
+      "just-because"
+    ],
+    "flowerTypes": [
+      "Roses",
+      "Gerberas",
+      "Thumbelina Mix blooms"
+    ],
+    "colors": [],
+    "colorLabel": "",
+    "style": "classic",
+    "description": "A playful mix of pastel blooms filled with delicate flowers and airy greenery. For the sweet, cheerful, and effortlessly charming.",
+    "careInstructions": "",
+    "availability": "available",
+    "tags": [
+      "best-seller"
+    ],
+    "images": [
+      "/images/bouquets/Thumbelina Size M (1).jpg",
+      "/images/bouquets/Thumbelina Size M (2).jpg",
+      "/images/bouquets/Thumbelina Size M (3).jpg"
+    ],
+    "customisable": true,
+    "dateAdded": "2026-08-17"
+  },
+  {
+    "id": "mix-blooms",
+    "name": "Mix Blooms",
+    "price": 50,
+    "sizes": [
+      {
+        "name": "Small",
+        "price": 50,
+        "images": [
+          "/images/bouquets/Mix blooms RM50 (1).jpg",
+          "/images/bouquets/Mix blooms RM50 (2).jpg"
+        ]
+      },
+      {
+        "name": "Medium",
+        "price": 60,
+        "images": [
+          "/images/bouquets/Mix blooms RM60 (1).jpg"
+        ]
+      },
+      {
+        "name": "Large",
+        "price": 70,
+        "images": [
+          "/images/bouquets/Mix blooms RM70 (1).jpg",
+          "/images/bouquets/Mix blooms RM70 (2).jpg",
+          "/images/bouquets/Mix blooms RM70 (3).jpg"
+        ]
+      }
+    ],
+    "category": "elegant",
+    "occasion": [
+      "just-because",
+      "birthday",
+      "thank-you"
+    ],
+    "flowerTypes": [
+      "Chrysanthemums",
+      "Gerbera",
+      "Fillers",
+      "Additional Blooms (Depending on availability)"
+    ],
+    "colors": [],
+    "colorLabel": "",
+    "style": "classic",
+    "description": "A dainty mix of pink and white flowers with other soft flowers. A sweet choice for a simple 'thinking of you'.",
+    "careInstructions": "",
+    "availability": "available",
+    "tags": [
+      "best-seller"
+    ],
+    "images": [
+      "/images/bouquets/Mix blooms RM70 (1).jpg",
+      "/images/bouquets/Mix blooms RM70 (2).jpg",
+      "/images/bouquets/Mix blooms RM70 (3).jpg"
+    ],
+    "customisable": true,
+    "dateAdded": "2026-08-17"
+  },
+  {
+    "id": "lilies-bloom",
+    "name": "Lilies Bloom",
+    "price": 79,
+    "sizes": [
+      {
+        "name": "Large",
+        "price": 129,
+        "images": [
+          "/images/bouquets/Lilies bloom (L).jpg",
+          "/images/bouquets/Lilies bloom (L) (2).jpg"
+        ]
+      },
+      {
+        "name": "Medium",
+        "price": 79,
+        "images": [
+          "/images/bouquets/Lilies Bloom Size M (1).jpg",
+          "/images/bouquets/Lilies Bloom Size M (2).jpg",
+          "/images/bouquets/Lilies Bloom Size M (3).jpg",
+          "/images/bouquets/Lilies Bloom Size M (4).jpg"
+        ]
+      },
+      {
+        "name": "Extra Blooms",
+        "price": 159,
+        "images": [
+          "/images/bouquets/Lilies Bloom - Extra blooms RM150 (1).jpg",
+          "/images/bouquets/Lilies Bloom - Extra blooms RM150 (2).jpg"
+        ]
+      }
+    ],
+    "category": "elegant",
+    "occasion": [
+      "birthday",
+      "anniversary",
+      "sympathy"
+    ],
+    "flowerTypes": [
+      "Lilies",
+      "Mix blooms"
+    ],
+    "colors": [],
+    "colorLabel": "",
+    "style": "classic",
+    "description": "Bright pops of pink and yellow to add a cheerful touch. Fresh, feminine, and made to brighten someone's day.",
+    "careInstructions": "",
+    "availability": "available",
+    "tags": [
+      "best-seller"
+    ],
+    "images": [
+      "/images/bouquets/Lilies Bloom - Extra blooms RM150 (1).jpg",
+      "/images/bouquets/Lilies Bloom - Extra blooms RM150 (2).jpg"
+    ],
+    "customisable": true,
+    "dateAdded": "2026-08-17"
+  },
+  {
+    "id": "single-lily-mix-blooms",
+    "name": "Single Lily Mix Blooms",
+    "price": 65,
+    "sizes": [
+      {
+        "name": "Standard",
+        "price": 65
+      }
+    ],
+    "category": "elegant",
+    "occasion": [
+      "just-because",
+      "birthday"
+    ],
+    "flowerTypes": [
+      "Single Lily",
+      "Mix blooms"
+    ],
+    "colors": [],
+    "colorLabel": "",
+    "style": "classic",
+    "description": "A dainty mix of colourful flowers with a single lily blooming for all lily lovers who wants something a little simpler. A sweet choice for a simple 'thinking of you'.",
+    "careInstructions": "",
+    "availability": "available",
+    "tags": [],
+    "images": [
+      "/images/bouquets/Single Lily Mix Blooms (1).jpg",
+      "/images/bouquets/Single Lily Mix Blooms (2).jpg",
+      "/images/bouquets/Single Lily Mix Blooms (3).jpg",
+      "/images/bouquets/Single Lily Mix Blooms (4).jpg",
+      "/images/bouquets/Single Lily Mix Blooms (5).JPG"
+    ],
+    "customisable": true,
+    "dateAdded": "2026-08-17"
+  },
+  {
+    "id": "lilies-with-love",
+    "name": "Lilies, with love",
+    "price": 65,
+    "sizes": [
+      {
+        "name": "2 Lilies",
+        "price": 70,
+        "images": [
+          "/images/bouquets/Lilies, with love (1).jpg",
+          "/images/bouquets/Lilies, with love (2).jpg",
+          "/images/bouquets/Lilies, with love (3).jpg",
+          "/images/bouquets/Lilies, with love (4).jpg"
+        ]
+      },
+      {
+        "name": "1 Lily",
+        "price": 65,
+        "images": [
+          "/images/bouquets/Lilies, with love (1).jpg",
+          "/images/bouquets/Lilies, with love (2).jpg",
+          "/images/bouquets/Lilies, with love (3).jpg",
+          "/images/bouquets/Lilies, with love (4).jpg"
+        ]
+      }
+    ],
+    "category": "elegant",
+    "occasion": [
+      "romance",
+      "just-because",
+      "anniversary"
+    ],
+    "flowerTypes": [
+      "2 lilies",
+      "Mix blooms"
+    ],
+    "colors": [],
+    "colorLabel": "",
+    "style": "classic",
+    "description": "A lovely and delicate arrangement of lilies blooming from an envelope, meant to send a heartfelt message.",
+    "careInstructions": "",
+    "availability": "available",
+    "tags": [],
+    "images": [
+      "/images/bouquets/Lilies, with love (1).jpg",
+      "/images/bouquets/Lilies, with love (2).jpg",
+      "/images/bouquets/Lilies, with love (3).jpg",
+      "/images/bouquets/Lilies, with love (4).jpg"
+    ],
+    "customisable": true,
+    "dateAdded": "2026-08-17"
+  },
+  {
+    "id": "lacey-lily-blush",
+    "name": "Lacey Lily Blush",
+    "price": 99,
+    "sizes": [
+      {
+        "name": "Standard",
+        "price": 99
+      }
+    ],
+    "category": "elegant",
+    "occasion": [
+      "romance",
+      "anniversary",
+      "birthday"
+    ],
+    "flowerTypes": [
+      "Lily",
+      "Orchid",
+      "Mix blooms"
+    ],
+    "colors": [],
+    "colorLabel": "",
+    "style": "classic",
+    "description": "A soft, blushing arrangement of exquisite lily, orchid and delicate filler flowers.",
+    "careInstructions": "",
+    "availability": "available",
+    "tags": [
+      "best-seller"
+    ],
+    "images": [
+      "/images/bouquets/Lacey Lily Blush (1).jpg",
+      "/images/bouquets/Lacey Lily Blush (2).jpg"
+    ],
+    "customisable": true,
+    "dateAdded": "2026-08-17"
+  },
+  {
+    "id": "rose-thumbelilies",
+    "name": "Rose Thumbelilies",
+    "price": 169,
+    "sizes": [
+      {
+        "name": "Standard",
+        "price": 169
+      }
+    ],
+    "category": "elegant",
+    "occasion": [
+      "birthday",
+      "just-because"
+    ],
+    "flowerTypes": [
+      "Rose lilies",
+      "Lilies",
+      "Thumbelina"
+    ],
+    "colors": [],
+    "colorLabel": "",
+    "style": "classic",
+    "description": "Cheerful blend with pop of pink, vibrant yellow, colourful seasonal flowers. Bright, fresh and full of joy.",
+    "careInstructions": "",
+    "availability": "available",
+    "tags": [],
+    "images": [
+      "/images/bouquets/Rose Thumbelily (1).jpg",
+      "/images/bouquets/Rose Thumbelily (2).jpg",
+      "/images/bouquets/Rose Thumbelily (3).jpg",
+      "/images/bouquets/Rose Thumbelily (4).jpg"
+    ],
+    "customisable": true,
+    "dateAdded": "2026-08-17"
+  },
+  {
+    "id": "lilies-roses",
+    "name": "Lilies & Roses",
+    "price": 100,
+    "sizes": [
+      {
+        "name": "Standard",
+        "price": 100
+      }
+    ],
+    "category": "elegant",
+    "occasion": [
+      "romance",
+      "anniversary"
+    ],
+    "flowerTypes": [
+      "Lilies",
+      "Roses",
+      "Soft Blooms"
+    ],
+    "colors": [],
+    "colorLabel": "",
+    "style": "classic",
+    "description": "Romantic twist on the usual love flowers, combining two all time favourite blooms in a soft and elegant bouquet for a heartwarming \"I love you\". ",
+    "careInstructions": "",
+    "availability": "available",
+    "tags": [],
+    "images": [
+      "/images/bouquets/Lilies & Roses (1).jpg",
+      "/images/bouquets/Lilies & Roses (2).jpg"
+    ],
+    "customisable": true,
+    "dateAdded": "2026-08-17"
+  },
+  {
+    "id": "orchid-bloom",
+    "name": "Orchid Bloom",
+    "price": 89,
+    "sizes": [
+      {
+        "name": "Standard",
+        "price": 89
+      }
+    ],
+    "category": "elegant",
+    "occasion": [
+      "birthday",
+      "sympathy",
+      "thank-you"
+    ],
+    "flowerTypes": [
+      "Orchid",
+      "Mix blooms"
+    ],
+    "colors": [],
+    "colorLabel": "",
+    "style": "classic",
+    "description": "An exotic and striking display of fresh orchids, guaranteed to leave an impression.",
+    "careInstructions": "",
+    "availability": "available",
+    "tags": [],
+    "images": [
+      "/images/bouquets/Orchid bloom (2).jpg",
+      "/images/bouquets/Orchid bloom.jpg"
+    ],
+    "customisable": true,
+    "dateAdded": "2026-08-17"
+  },
+  {
+    "id": "mix-blooms-with-love",
+    "name": "Mix blooms, with love",
+    "price": 60,
+    "sizes": [
+      {
+        "name": "Standard",
+        "price": 60
+      }
+    ],
+    "category": "elegant",
+    "occasion": [
+      "just-because",
+      "thank-you"
+    ],
+    "flowerTypes": [
+      "Chrysanthemums",
+      "Gerbera",
+      "Fillers",
+      "Additional Blooms (Depending on availability)"
+    ],
+    "colors": [],
+    "colorLabel": "",
+    "style": "classic",
+    "description": "A lovely and delicate arrangement of soft flowers blooming from an envelope, meant to send a heartfelt message.",
+    "careInstructions": "",
+    "availability": "available",
+    "tags": [],
+    "images": [
+      "/images/bouquets/Mix blooms, with love (1).jpg",
+      "/images/bouquets/Mix blooms, with love (2).jpg",
+      "/images/bouquets/Mix blooms, with love (3).jpg",
+      "/images/bouquets/Mix blooms, with love (4).jpg",
+      "/images/bouquets/Mix blooms, with love (5).jpg"
+    ],
+    "customisable": true,
+    "dateAdded": "2026-08-17"
+  }
+];
   }
 
   try {

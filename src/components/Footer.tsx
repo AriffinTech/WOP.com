@@ -13,9 +13,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-12 md:gap-10">
           {/* Brand */}
           <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl text-rose">✿</span>
-              <span className="font-heading text-xl font-semibold text-charcoal">Wisp of Petals</span>
+            <div className="flex items-center">
+              <img src="/images/logo.png" alt="Wisp of Petals Logo" className="h-20 md:h-28 w-auto object-contain rounded-sm" />
             </div>
             <p className="text-sm text-text-light leading-relaxed max-w-[260px] mt-1">
               Handcrafted bouquets made with love from our home to yours.

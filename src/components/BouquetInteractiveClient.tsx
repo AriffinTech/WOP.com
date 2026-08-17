@@ -72,10 +72,7 @@ export default function BouquetInteractiveClient({ bouquet }: { bouquet: Bouquet
               <span className="w-24 text-sm font-medium text-text-muted">Flowers</span>
               <span className="flex-1 text-sm text-charcoal">{bouquet.flowerTypes?.join(", ")}</span>
             </li>
-            <li className="flex items-start">
-              <span className="w-24 text-sm font-medium text-text-muted">Colour</span>
-              <span className="flex-1 text-sm text-charcoal">{bouquet.colorLabel}</span>
-            </li>
+
             <li className="flex items-start">
               <span className="w-24 text-sm font-medium text-text-muted">Status</span>
               <span className="flex-1 text-sm text-charcoal capitalize">{bouquet.availability.replace("-", " ")}</span>

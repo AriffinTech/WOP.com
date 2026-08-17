@@ -60,13 +60,10 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className={`absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center gap-2 z-[110] transition-colors ${
-              isTransparent ? "text-white" : "text-charcoal"
-            } ${menuOpen ? "!text-charcoal" : ""}`}
+            className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center z-[110] transition-opacity hover:opacity-80"
             onClick={() => setMenuOpen(false)}
           >
-            <span className="text-2xl">✿</span>
-            <span className="font-heading text-xl md:text-2xl font-bold tracking-tight">Wisp of Petals</span>
+            <img src="/images/logo.png" alt="Wisp of Petals Logo" className="h-20 md:h-28 w-auto object-contain rounded-sm" />
           </Link>
 
           {/* Desktop Nav */}
