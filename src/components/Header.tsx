@@ -45,7 +45,7 @@ export default function Header() {
         className={`fixed top-[32px] md:top-[34px] left-0 right-0 z-50 transition-all duration-300
           ${isTransparent ? "bg-transparent" : "bg-white border-b border-border-light shadow-sm"}`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-auto py-3 md:py-4"> 
           {/* Mobile Burger */}
           <button
             className={`md:hidden flex flex-col gap-[5px] p-1 z-[110] ${isTransparent ? "text-white" : "text-charcoal"}`}

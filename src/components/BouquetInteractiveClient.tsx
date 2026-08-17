@@ -22,7 +22,7 @@ export default function BouquetInteractiveClient({ bouquet }: { bouquet: Bouquet
     : bouquet.images || [];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 lg:gap-20">
       {/* Images */}
       <BouquetGallery images={currentImages} />
 
@@ -38,10 +38,10 @@ export default function BouquetInteractiveClient({ bouquet }: { bouquet: Bouquet
 
         <h1 className="font-heading text-3xl md:text-5xl font-medium text-charcoal mb-2 md:mb-4">{bouquet.name}</h1>
         
-        <p className={`text-2xl font-medium text-charcoal ${bouquet.sizes.length > 1 ? "mb-6 md:mb-6" : "mb-0 md:mb-6"}`}>RM {selectedSize.price}</p>
+        <p className={`text-2xl font-medium text-charcoal ${bouquet.sizes.length > 1 ? "mb-3 md:mb-6" : "mb-0 md:mb-6"}`}>RM {selectedSize.price}</p>
 
         {bouquet.sizes.length > 1 && (
-          <div className="mb-6 md:mb-8 mt-2">
+          <div className="mb-3 md:mb-8 mt-1">
             <h3 className="text-sm font-medium text-text-muted mb-3">Select Size</h3>
             <div className="flex flex-wrap gap-3">
               {bouquet.sizes.map((size) => (
@@ -61,12 +61,12 @@ export default function BouquetInteractiveClient({ bouquet }: { bouquet: Bouquet
           </div>
         )}
 
-        <div className="h-[1px] w-full bg-border-light my-5 md:my-6" />
+        <div className="h-[1px] w-full bg-border-light my-3 md:my-6" />
 
-        <p className="text-base md:text-lg text-text-light leading-relaxed mb-6 md:mb-8">{bouquet.description}</p>
+        <p className="text-base md:text-lg text-text-light leading-relaxed mb-4 md:mb-8">{bouquet.description}</p>
 
-        <div className="bg-surface border border-border-light rounded-xl p-6 mb-8">
-          <h3 className="font-heading text-sm font-semibold uppercase tracking-wider mb-4">Bouquet Details</h3>
+        <div className="bg-surface border border-border-light rounded-xl p-4 md:p-6 mb-4 md:mb-8">
+          <h3 className="font-heading text-sm font-semibold uppercase tracking-wider mb-2 md:mb-4">Bouquet Details</h3>
           <ul className="flex flex-col gap-3">
             <li className="flex items-start">
               <span className="w-24 text-sm font-medium text-text-muted">Flowers</span>
@@ -80,7 +80,7 @@ export default function BouquetInteractiveClient({ bouquet }: { bouquet: Bouquet
           </ul>
         </div>
 
-        <div className="bg-sage-bg rounded-xl p-5 md:p-6 mb-8 md:mb-10">
+        <div className="bg-sage-bg rounded-xl p-4 md:p-6 mb-4 md:mb-10">
           <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-[#4a6e46] mb-2">The WOP Promise</h3>
           <p className="text-[13px] md:text-sm text-[#4a6e46] leading-relaxed">Every bouquet is handcrafted with love and carefully prepared to ensure your blooms arrive fresh and beautiful. All you have to do is enjoy the moment!</p>
         </div>

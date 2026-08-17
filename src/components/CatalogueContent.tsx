@@ -90,7 +90,7 @@ export default function CatalogueContent({ initialBouquets, flowerOptions }: Cat
   }, [initialBouquets, currentFlower, currentColor, currentStyle, currentMinPrice, currentMaxPrice, currentSort, currentOccasion]);
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12 md:py-24 pt-[104px]">
+    <div className="max-w-7xl mx-auto px-6 py-12 md:py-24 pt-[140px] md:pt-[180px]"> 
       <div className="flex flex-col md:flex-row gap-12">
         {/* Mobile Filter Toggle */}
         <button
