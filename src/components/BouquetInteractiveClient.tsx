@@ -1,9 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { Lottie } from "lottie-react";
 import { Bouquet, getWhatsAppLink } from "@/data/bouquets";
 import { WhatsAppIcon } from "@/components/Icons";
 import BouquetGallery from "@/components/BouquetGallery";
+
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const loveLetterAnimation = require("@/../public/animations/love-letter.json");
+
 
 export default function BouquetInteractiveClient({ bouquet }: { bouquet: Bouquet }) {
   // Default to "Large" if it exists, otherwise default to the largest/last size in the array
@@ -78,6 +83,21 @@ export default function BouquetInteractiveClient({ bouquet }: { bouquet: Bouquet
               <span className="flex-1 text-sm text-charcoal capitalize">{bouquet.availability.replace("-", " ")}</span>
             </li>
           </ul>
+        </div>
+
+        {/* Love Letter Add-on */}
+        <div className="bg-[#fff5f7] border border-[#f5d5dc] rounded-xl p-4 md:p-5 mb-4 md:mb-8">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 md:w-14 md:h-14 shrink-0">
+              <Lottie src={loveLetterAnimation} loop autoplay className="w-full h-full" />
+            </div>
+            <div className="flex-1">
+              <p className="text-sm md:text-[15px] text-charcoal leading-snug">
+                Wanna add a cute little letter for your loved one? <span className="font-semibold">RM2 je</span> 🤓💌
+              </p>
+              <p className="text-xs text-text-muted mt-1">Optional add-on · Just let us know when ordering!</p>
+            </div>
+          </div>
         </div>
 
         <div className="bg-sage-bg rounded-xl p-4 md:p-6 mb-4 md:mb-10">
