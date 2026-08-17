@@ -24,7 +24,7 @@ export default async function BouquetDetailPage({ params }: { params: Promise<{ 
     .slice(0, 3);
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12 md:py-24 pt-[140px] md:pt-[180px]">
+    <div className="max-w-7xl mx-auto px-6 py-12 md:py-24 pt-[120px] md:pt-[140px]">
       <Link href="/bouquets" className="inline-flex items-center text-sm font-semibold text-text-light hover:text-charcoal transition-colors uppercase tracking-wider mb-8 md:mb-12">
         ← Back to Catalogue
       </Link>

@@ -22,7 +22,7 @@ export default async function HomePage() {
       <section className="relative min-h-[85vh] flex items-center bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/florist-story.jpg')] bg-cover bg-center opacity-40 mix-blend-multiply" />
         
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-center mt-[140px] md:mt-[180px]">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-center mt-[120px] md:mt-[140px]">
           <h2 className="text-white text-sm md:text-base font-bold tracking-widest uppercase mb-4 opacity-0 animate-fade-in-up">
             Whimsical • Handcrafted • Unique
           </h2>

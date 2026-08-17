@@ -45,7 +45,7 @@ export default function Header() {
         className={`fixed top-[32px] md:top-[34px] left-0 right-0 z-50 transition-all duration-300
           ${isTransparent ? "bg-transparent" : "bg-white border-b border-border-light shadow-sm"}`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-auto py-3 md:py-4"> 
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20 md:h-24">
           {/* Mobile Burger */}
           <button
             className={`md:hidden flex flex-col gap-[5px] p-1 z-[110] ${isTransparent ? "text-white" : "text-charcoal"}`}
@@ -63,7 +63,7 @@ export default function Header() {
             className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center z-[110] transition-opacity hover:opacity-80"
             onClick={() => setMenuOpen(false)}
           >
-            <img src="/images/logo.png" alt="Wisp of Petals Logo" className="h-20 md:h-28 w-auto object-contain rounded-sm" />
+            <img src="/images/logo.png" alt="Wisp of Petals Logo" className="h-16 md:h-20 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
