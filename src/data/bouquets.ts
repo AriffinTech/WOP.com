@@ -297,7 +297,7 @@ export async function getBouquets(): Promise<Bouquet[]> {
         "name": "Extra Blooms",
         "price": 159,
         "images": [
-          "/images/bouquets/Lilies Bloom - Extra blooms RM150 (1).jpg",
+          "/images/bouquets/Lilies bloom - Extra blooms RM150 (1).jpg",
           "/images/bouquets/Lilies Bloom - Extra blooms RM150 (2).jpg"
         ]
       }
@@ -322,7 +322,7 @@ export async function getBouquets(): Promise<Bouquet[]> {
       "best-seller"
     ],
     "images": [
-      "/images/bouquets/Lilies Bloom - Extra blooms RM150 (1).jpg",
+      "/images/bouquets/Lilies bloom - Extra blooms RM150 (1).jpg",
       "/images/bouquets/Lilies Bloom - Extra blooms RM150 (2).jpg"
     ],
     "customisable": true,
